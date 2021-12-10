@@ -1,0 +1,1 @@
+Computer wins! Computer chose rock, and Player chose scissors;

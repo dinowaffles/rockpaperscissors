@@ -1,0 +1,1 @@
+Player wins! Player chose paper, and Computer chose rock.

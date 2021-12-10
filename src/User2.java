@@ -10,7 +10,9 @@ public class User2 extends Player{
 
     @Override
     public void Choice() {
+        Scanner input = new Scanner(System.in);
         System.out.println("Player 2: Type 'r' to choose rock, type 'p' to choose paper, or type 's' to choose scissors.");
-        setChoice(input.nextLine().toLowerCase());
+        String user2Choice = input.nextLine().toLowerCase();
+        setChoice(user2Choice);
     }
 }

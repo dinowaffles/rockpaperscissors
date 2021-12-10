@@ -153,9 +153,20 @@ public class Game {
         }
     }
 
-    public static void viewHistory() {
+    public static void viewHistory() throws IOException {
+        Scanner in = new Scanner(System.in);
         System.out.println(History.gameHistory);
+        System.out.printf("Type 'main' to return to the main menu. %n");
+        String returnToMain = in.next();
+        try {
+            if (returnToMain.equalsIgnoreCase("main")) {
+                mainMenu();
+            }
+        } catch (IOException e) {
+            System.out.println("Error");
+        }
     }
+
 
     public static void quitGame() throws IOException {
         gameStart = false;

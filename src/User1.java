@@ -1,4 +1,3 @@
-import java.io.IOException;
 import java.util.Scanner;
 
 public class User1 extends Player {
@@ -11,7 +10,10 @@ public class User1 extends Player {
 
     @Override
     public void Choice() {
+        Scanner input = new Scanner(System.in);
         System.out.println("Player 1: Type 'r' to choose rock, type 'p' to choose paper, or type 's' to choose scissors.");
-        setChoice(input.nextLine().toLowerCase());
+        String user1Choice = input.nextLine().toLowerCase();
+        setChoice(user1Choice);
+        System.out.println(System.lineSeparator().repeat(50));
     }
 }

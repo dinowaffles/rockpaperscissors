@@ -23,7 +23,7 @@ public class History {
         File file = new File(fileName);
         BufferedReader reader = null;
         try {
-            reader = new BufferedReader(new FileReader(file));
+            reader = new BufferedReader(new FileReader("/src/history.txt"));
             String history = reader.readLine();
             while (history != null ) {
                 GameHistory game = new GameHistory();
@@ -36,4 +36,5 @@ public class History {
             reader.close();
         }
     }
+
 }
