@@ -15,7 +15,7 @@ public class History {
     public static void writeFile(String fileName, String whoWon) throws IOException {
         File file = new File(fileName);
         BufferedWriter writer = new BufferedWriter(new FileWriter(file));
-        writer.write(whoWon + "won this round!,");
+        writer.write(whoWon);
         writer.close();
     }
 
