@@ -1,14 +1,39 @@
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class History {
 
-    public static void writeFile(String fileName, String winner) throws IOException {
+    private class GameHistory {
+        private String winner;
+        public void setWinner(String winner) {this.winner = winner; }
+        public String getWinner() {return winner; }
+    }
+
+    static List<GameHistory> gameHistory = new ArrayList<>();
+
+    public static void writeFile(String fileName, String whoWon) throws IOException {
         File file = new File(fileName);
         BufferedWriter writer = new BufferedWriter(new FileWriter(file));
-        writer.write(winner + "won this round!");
+        writer.write(whoWon + "won this round!,");
         writer.close();
+    }
+
+    public void readFile(String fileName) throws IOException {
+        File file = new File(fileName);
+        BufferedReader reader = null;
+        try {
+            reader = new BufferedReader(new FileReader(file));
+            String history = reader.readLine();
+            while (history != null ) {
+                GameHistory game = new GameHistory();
+                game.setWinner(history);
+                gameHistory.add(game);
+                history = reader.readLine();
+            }
+        } finally {
+            assert reader != null;
+            reader.close();
+        }
     }
 }
