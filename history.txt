@@ -1,1 +1,2 @@
-Computer wins! Computer chose rock, and Player chose scissors;
+Player1 wins! Player1 chose rock, and Player2 chose scissors.
+Player2 wins! Player2 chose rock, and Player1 chose scissors;
