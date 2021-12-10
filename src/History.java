@@ -10,8 +10,6 @@ public class History {
         public String getWinner() {return winner; }
     }
 
-    static List<GameHistory> gameHistory = new ArrayList<>();
-
     public static void writeFile(String fileName, String whoWon) throws IOException {
         File file = new File(fileName);
         BufferedWriter writer = new BufferedWriter(new FileWriter("history.txt", true));
@@ -19,6 +17,8 @@ public class History {
         writer.newLine();
         writer.close();
     }
+
+    static List<GameHistory> gameHistory = new ArrayList<>();
 
     public void readFile(String fileName, ArrayList<String> gameHistory) throws IOException {
         File file = new File(fileName);
@@ -28,8 +28,11 @@ public class History {
         System.out.println(history);
         try {
             game.setWinner(history);
+            System.out.println(history);
             gameHistory.add(String.valueOf(game));
+            System.out.println(history);
             history = reader.readLine();
+            System.out.println(history);
         } finally {
             reader.close();
         }
