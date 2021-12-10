@@ -20,19 +20,17 @@ public class History {
         writer.close();
     }
 
-    public void readFile(String fileName) throws IOException {
+    public void readFile(String fileName, ArrayList<String> gameHistory) throws IOException {
         File file = new File(fileName);
         BufferedReader reader = new BufferedReader(new FileReader("history.txt"));
         GameHistory game = new GameHistory();
         String history = reader.readLine();
+        System.out.println(history);
         try {
-        while (history != null ) {
-                game.setWinner(history);
-                gameHistory.add(game);
-                history = reader.readLine();
-            }
+            game.setWinner(history);
+            gameHistory.add(String.valueOf(game));
+            history = reader.readLine();
         } finally {
-            assert reader != null;
             reader.close();
         }
     }

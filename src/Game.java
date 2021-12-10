@@ -171,6 +171,7 @@ public class Game {
     public static void quitGame() throws IOException {
         gameStart = false;
         Runtime.getRuntime().exec("clear");
+        System.out.println(System.lineSeparator().repeat(50));
     }
 
 }

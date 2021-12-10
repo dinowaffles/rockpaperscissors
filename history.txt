@@ -1,2 +1,3 @@
 Player1 wins! Player1 chose rock, and Player2 chose scissors.
 Player2 wins! Player2 chose rock, and Player1 chose scissors;
+It's a draw! Both chose scissors.
